@@ -13,7 +13,7 @@ settings():
     user.help_max_contexts_per_page = 20
 
     # The default amount used when scrolling continuously
-    user.mouse_continuous_scroll_amount = 80
+    user.mouse_continuous_scroll_amount = 30
 
     # Stop continuous scroll/gaze scroll with a pop
     user.mouse_enable_pop_stops_scroll = 1
@@ -31,7 +31,7 @@ settings():
     user.mouse_wheel_down_amount = 120
 
     # Mouse grid and friends put the number one on the bottom left (vs on the top left)
-    user.grids_put_one_bottom_left = 1
+    user.grids_put_one_bottom_left = 0
 
     # The number of lines of command history to display by default
     user.command_history_display = 10
@@ -39,6 +39,10 @@ settings():
     # The number of lines of command history to keep in total;
     # "command history more" to display all of them, "command history less" to restore
     user.command_history_size = 50
+
+    user.mouse_enable_hiss_drag = 1
+
+    user.mouse_enable_puh_click = 1
 
     # Uncomment the below to enable context-sensitive dictation. This determines
     # how to format (capitalize, space) dictation-mode speech by selecting &
@@ -48,4 +52,4 @@ settings():
     # user.context_sensitive_dictation = 1
 
 # uncomment tag to enable mouse grid
-# tag(): user.mouse_grid_enabled
+tag(): user.mouse_grid_enabled

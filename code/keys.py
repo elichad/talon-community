@@ -113,9 +113,9 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
-    "control": "ctrl",  #'troll':   'ctrl',
-    "shift": "shift",  #'sky':     'shift',
+    "alter": "alt",  #'alter': 'alt',
+    "fly": "ctrl",  #'troll':   'ctrl',
+    "shin": "shift",  #'sky':     'shift',
     "super": "super",
 }
 if app.platform  == "mac":
@@ -135,18 +135,23 @@ punctuation_words = {
     "back tick": "`",
     "grave": "`",
     "comma": ",",
-    "period": ".",
     "full stop": ".",
     "semicolon": ";",
     "colon": ":",
-    "forward slash": "/",
+    "deckle": ":",
+    "slash": "/",
     "question mark": "?",
+    "questo": "?",
     "exclamation mark": "!",
     "exclamation point": "!",
+    "clover": "!",
+    "dollar sign": "$",
     "asterisk": "*",
     "hash sign": "#",
-    "number sign": "#",
+    "hash": "#",
+    "hashtag": "#",
     "percent sign": "%",
+    "percent": "%",
     "at sign": "@",
     "and sign": "&",
     "ampersand": "&",
@@ -159,6 +164,7 @@ symbol_key_words = {
     "dot": ".",
     "point": ".",
     "quote": "'",
+    "chicky": "'",
     "apostrophe": "'",
     "L square": "[",
     "left square": "[",
@@ -168,7 +174,7 @@ symbol_key_words = {
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
-    "dash": "-",
+    #"dash": "-",
     "equals": "=",
     "plus": "+",
     "tilde": "~",
@@ -199,6 +205,7 @@ symbol_key_words = {
     "pipe": "|",
     "dubquote": '"',
     "double quote": '"',
+    "chocky": '"',
 
     # Currencies
     "dollar": "$",
@@ -211,10 +218,10 @@ ctx.lists["self.punctuation"] = punctuation_words
 ctx.lists["self.symbol_key"] = symbol_key_words
 ctx.lists["self.number_key"] = dict(zip(default_digits, numbers))
 ctx.lists["self.arrow_key"] = {
-    "down": "down",
-    "left": "left",
-    "right": "right",
-    "up": "up",
+    "dell": "down",
+    "lease": "left",
+    "ross": "right",
+    "sauce": "up",
 }
 
 simple_keys = [
@@ -230,22 +237,28 @@ simple_keys = [
 ]
 
 alternate_keys = {
-    "delete": "backspace",
-    "forward delete": "delete",
-    #'junk': 'backspace',
-    "page up": "pageup",
-    "page down": "pagedown",
+    "clear": "backspace",
+    "deli": "delete",
+    "shock": "enter",
+    "escape": "escape",
+    "cancel": "escape",
+    "insert": "insert",
+    "puppy": "pageup",
+    "pound": "pagedown",
+    "latch": "home",
+    "ratch": "end",
+    "spit": "tab",
+    "arch": "space",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
     alternate_keys["menu key"] = "menu"
     alternate_keys["print screen"] = "printscr"
 
-special_keys = {k: k for k in simple_keys}
-special_keys.update(alternate_keys)
+# special_keys = {k: k for k in simple_keys}
+# special_keys.update(alternate_keys)
+special_keys = alternate_keys
 ctx.lists["self.special_key"] = special_keys
 ctx.lists["self.function_key"] = {
     f"F {default_f_digits[i]}": f"f{i + 1}" for i in range(12)
 }
-
-

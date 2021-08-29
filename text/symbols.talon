@@ -1,8 +1,9 @@
 question [mark]: "?"
 (downscore | underscore): "_"
+dash: " – "
 double dash: "--"
-(bracket | brack | left bracket): "{"
-(rbrack | are bracket | right bracket): "}"
+(bracket | brack | left bracket): "("
+(rbrack | are bracket | right bracket): ")"
 triple quote: "'''"
 (triple grave | triple back tick | gravy):
     insert("```")
@@ -29,48 +30,48 @@ empty escaped string:
     "\\'\\'"
     key(left)
     key(left)
-(inside parens | args):
+prekris:
 	insert("()")
 	key(left)
-inside (squares | square brackets | list):
+brax:
 	insert("[]")
 	key(left)
-inside (bracket | braces):
+curly:
 	insert("{}")
 	key(left)
-inside percent:
+centuries:
 	insert("%%")
 	key(left)
-inside (quotes | string):
+thin quotes:
 	insert("''")
 	key(left)
-inside (double quotes | dubquotes):
+quotes:
     insert('""')
 	key(left)
-inside (graves | back ticks):
+tickris:
 	insert("``")
 	key(left)
-angle that:
+hug angles:
     text = edit.selected_text()
     user.paste("<{text}>")
-(square | square bracket) that:
+hug brax:
     text = edit.selected_text()
     user.paste("[{text}]")
-(bracket | brace) that:
+hug curly:
     text = edit.selected_text()
     user.paste("{{{text}}}")
-(parens | args) that:
+hug prekris:
     text = edit.selected_text()
     user.paste("({text})")
-percent that:
+hug percent:
     text = edit.selected_text()
     user.paste("%{text}%")
-quote that:
+hug quotes:
     text = edit.selected_text()
     user.paste("'{text}'")
 (double quote | dubquote) that:
     text = edit.selected_text()
     user.paste('"{text}"')
-(grave | back tick) that:
+hug (graves | back ticks):
     text = edit.selected_text()
     user.paste('`{text}`')

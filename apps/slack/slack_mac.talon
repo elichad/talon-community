@@ -40,7 +40,7 @@ insert code:
 bold: key(cmd-b)
 (italic | italicize): key(cmd-i)
 (strike | strikethrough): key(cmd-shift-x)
-(clear | scrap | scratch): key(cmd-a backspace)
+(scrap | scratch): key(cmd-a backspace)
 (slack | lack) snippet: key(cmd-shift-enter)
 # Calls
 ([toggle] mute | unmute): key(m)
