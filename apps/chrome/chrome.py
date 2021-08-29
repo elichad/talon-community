@@ -9,6 +9,10 @@ os: windows
 and app.name: Google Chrome
 os: windows
 and app.exe: chrome.exe
+os: windows
+and app.name: Vivaldi
+os: windows
+and app.exe: vivaldi.exe
 """
 mod.apps.chrome = """
 os: mac

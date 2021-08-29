@@ -6,11 +6,11 @@ tag: browser
     sleep(50ms)
     edit.copy()
 go home: browser.go_home()
-[go] forward: browser.go_forward()
-go (back | backward): browser.go_back()
+[go] next: browser.go_forward()
+go (back | backward | prev): browser.go_back()
 go to {user.website}: browser.go(website)
 
-go private: browser.open_private_window()
+start private: browser.open_private_window()
 
 bookmark show: browser.bookmarks()
 bookmark bar: browser.bookmarks_bar()

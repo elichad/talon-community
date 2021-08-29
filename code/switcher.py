@@ -290,7 +290,7 @@ class Actions:
                 actions.key("super-s")
                 actions.sleep("300ms")
                 actions.insert("apps: {}".format(path))
-                actions.sleep("150ms")
+                actions.sleep("300ms")
                 actions.key("enter")
 
         else:

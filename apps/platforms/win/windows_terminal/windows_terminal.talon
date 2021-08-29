@@ -17,4 +17,3 @@ kill all:
     key(ctrl-c)
     insert("y")
     key(enter)
-    

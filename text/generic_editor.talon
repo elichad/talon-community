@@ -1,25 +1,25 @@
-find it:
+find:
     edit.find()
 
-next one:
+next:
     edit.find_next()
 
-go word left:
+bird:
     edit.word_left()
 
-go word right:
+firch:
     edit.word_right()
 
-go left:
+lease:
     edit.left()
 
-go right:
+ross:
     edit.right()
 
-go up:
+sauce:
     edit.up()
 
-go down:
+dell:
     edit.down()
 
 go line start:
@@ -28,11 +28,11 @@ go line start:
 go line end:
     edit.line_end()
 
-go way left:
+way latch:
     edit.line_start()
     edit.line_start()
 
-go way right:
+way ratch:
     edit.line_end()
 
 go way down:
@@ -40,10 +40,10 @@ go way down:
 
 go way up:
     edit.file_start()
-    
+
 go bottom:
     edit.file_end()
-    
+
 go top:
     edit.file_start()
 
@@ -54,7 +54,7 @@ go page up:
     edit.page_up()
 
 # selecting
-select line:
+shackle:
     edit.select_line()
 
 select all:
@@ -75,10 +75,10 @@ select down:
 select word:
     edit.select_word()
 
-select word left:
+queue lease:
     edit.extend_word_left()
 
-select word right:
+queue ross:
     edit.extend_word_right()
 
 select way left:
@@ -118,14 +118,14 @@ clear down:
     edit.extend_line_down()
     edit.delete()
 
-clear word:
+span:
     edit.delete_word()
 
-clear word left:
+span lease:
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+span ross:
     edit.extend_word_right()
     edit.delete()
 

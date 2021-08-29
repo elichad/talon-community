@@ -14,33 +14,33 @@ window close: user.vscode("workbench.action.closeWindow")
 please [<user.text>]:
     user.vscode("workbench.action.showCommands")
     insert(user.text or "")
-    
+
 # Sidebar
-bar explore: user.vscode("workbench.view.explorer")
-bar extensions: user.vscode("workbench.view.extensions")
-bar outline: user.vscode("outline.focus")
-bar run: user.vscode("workbench.view.debug")
-bar search: user.vscode("workbench.view.search")
-bar source: user.vscode("workbench.view.scm")
+explorer: user.vscode("workbench.view.explorer")
+extensions: user.vscode("workbench.view.extensions")
+outline: user.vscode("outline.focus")
+debug view: user.vscode("workbench.view.debug")
+search: user.vscode("workbench.view.search")
+git view: user.vscode("workbench.view.scm")
 bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
 
 symbol hunt [<user.text>]:
     user.vscode("workbench.action.gotoSymbol")
     sleep(50ms)
     insert(text or "")
-    
+
 # Panels
 panel control: user.vscode("workbench.panel.repl.view.focus")
-panel output: user.vscode("workbench.panel.output.focus")
-panel problems: user.vscode("workbench.panel.markers.view.focus")
+output: user.vscode("workbench.panel.output.focus")
+problems: user.vscode("workbench.panel.markers.view.focus")
 panel switch: user.vscode("workbench.action.togglePanel")
-panel terminal: user.vscode("workbench.action.terminal.focus")
+terminal: user.vscode("workbench.action.terminal.focus")
 focus editor: user.vscode("workbench.action.focusActiveEditorGroup")
 
 # Settings
-show settings: user.vscode("workbench.action.openGlobalSettings")
-show shortcuts: user.vscode("workbench.action.openGlobalKeybindings")
-show snippets: user.vscode("workbench.action.openSnippets")
+settings: user.vscode("workbench.action.openGlobalSettings")
+shortcuts: user.vscode("workbench.action.openGlobalKeybindings")
+snippets: user.vscode("workbench.action.openSnippets")
 
 # Display
 centered switch: user.vscode("workbench.action.toggleCenteredLayout")
@@ -70,19 +70,19 @@ save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
 # Language Features
 suggest show: user.vscode("editor.action.triggerSuggest")
 hint show: user.vscode("editor.action.triggerParameterHints")
-definition show: user.vscode("editor.action.revealDefinition")
-definition peek: user.vscode("editor.action.peekDefinition")
-definition side: user.vscode("editor.action.revealDefinitionAside")
-references show: user.vscode("editor.action.goToReferences")
-references find: user.vscode("references-view.find")
+def show: user.vscode("editor.action.revealDefinition")
+def peek: user.vscode("editor.action.peekDefinition")
+def side: user.vscode("editor.action.revealDefinitionAside")
+ref show: user.vscode("editor.action.goToReferences")
+ref find: user.vscode("references-view.find")
 format that: user.vscode("editor.action.formatDocument")
 format selection: user.vscode("editor.action.formatSelection")
 imports fix: user.vscode("editor.action.organizeImports")
 problem next: user.vscode("editor.action.marker.nextInFiles")
 problem last: user.vscode("editor.action.marker.prevInFiles")
 problem fix: user.vscode("problems.action.showQuickFixes")
-rename that: user.vscode("editor.action.rename")
-refactor that: user.vscode("editor.action.refactor")
+rename [that]: user.vscode("editor.action.rename")
+refactor [that]: user.vscode("editor.action.refactor")
 whitespace trim: user.vscode("editor.action.trimTrailingWhitespace")
 language switch: user.vscode("workbench.action.editor.changeLanguageMode")
 refactor rename: user.vscode("editor.action.rename")
@@ -91,16 +91,16 @@ refactor this: user.vscode("editor.action.refactor")
 #code navigation
 (go declaration | follow): user.vscode("editor.action.revealDefinition")
 go back: user.vscode("workbench.action.navigateBack")
-go forward: user.vscode("workbench.action.navigateForward")
+go next: user.vscode("workbench.action.navigateForward")
 go implementation: user.vscode("editor.action.goToImplementation")
 go type: user.vscode("editor.action.goToTypeDefinition")
 go usage: user.vscode("references-view.find")
-go recent [<user.text>]:
+workspace recent [<user.text>]:
     user.vscode("workbench.action.openRecent")
     sleep(50ms)
     insert(text or "")
     sleep(250ms)
-    
+
 # Bookmarks. Requires Bookmarks plugin
 go marks: user.vscode("workbench.view.extension.bookmarks")
 toggle mark: user.vscode("bookmarks.toggle")
@@ -108,13 +108,13 @@ go next mark: user.vscode("bookmarks.jumpToNext")
 go last mark: user.vscode("bookmarks.jumpToPrevious")
 
 # Folding
-fold that: user.vscode("editor.fold")
-unfold that: user.vscode("editor.unfold")
-fold those: user.vscode("editor.foldAllMarkerRegions")
-unfold those: user.vscode("editor.unfoldRecursively")
-fold all: user.vscode("editor.foldAll")
-unfold all: user.vscode("editor.unfoldAll")
-fold comments: user.vscode("editor.foldAllBlockComments")
+fulcrum: user.vscode("editor.fold")
+unkind: user.vscode("editor.unfold")
+fulcrum sub: user.vscode("editor.foldAllMarkerRegions")
+unkind sub: user.vscode("editor.unfoldRecursively")
+fulcrum all: user.vscode("editor.foldAll")
+unkind all: user.vscode("editor.unfoldAll")
+fulcrum comments: user.vscode("editor.foldAllBlockComments")
 
 # Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
 git branch: user.vscode("git.branchFrom")
@@ -171,9 +171,14 @@ terminal split: user.vscode("workbench.action.terminal.split")
 terminal zoom: user.vscode("workbench.action.toggleMaximizedPanel")
 terminal trash: user.vscode("workbench.action.terminal.kill")
 terminal toggle: user.vscode_and_wait("workbench.action.terminal.toggleTerminal")
-terminal scroll up: user.vscode("workbench.action.terminal.scrollUp")
-terminal scroll down: user.vscode("workbench.action.terminal.scrollDown")
+termites up: user.vscode("workbench.action.terminal.scrollUp")
+termites down: user.vscode("workbench.action.terminal.scrollDown")
 terminal <number_small>: user.vscode_terminal(number_small)
+termites editor: key("shift-alt-'")
+termites new editor: key("ctrl-shift-alt-;")
+termites new here: key("ctrl-shift-alt-'")
+termites puppy: key("shift-pageup")
+termites pound: key("shift-pagedown")
 
 #TODO: should this be added to linecommands?
 copy line down: user.vscode("editor.action.copyLinesDownAction")
@@ -190,7 +195,7 @@ restore: user.vscode("workbench.action.evenEditorWidths")
 replace here:
     user.replace("")
     key(cmd-alt-l)
-    
+
 hover show: user.vscode("editor.action.showHover")
 
 join lines: user.vscode("editor.action.joinLines")
