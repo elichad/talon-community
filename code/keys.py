@@ -113,12 +113,12 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alter": "alt",  #'alter': 'alt',
-    "fly": "ctrl",  #'troll':   'ctrl',
-    "shin": "shift",  #'sky':     'shift',
+    "alter": "alt",  # 'alter': 'alt',
+    "fly": "ctrl",  # 'troll':   'ctrl',
+    "shin": "shift",  # 'sky':     'shift',
     "super": "super",
 }
-if app.platform  == "mac":
+if app.platform == "mac":
     modifier_keys["command"] = "cmd"
     modifier_keys["option"] = "alt"
 ctx.lists["self.modifier_key"] = modifier_keys
@@ -174,7 +174,7 @@ symbol_key_words = {
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
-    #"dash": "-",
+    # "dash": "-",
     "equals": "=",
     "plus": "+",
     "tilde": "~",
@@ -209,7 +209,6 @@ symbol_key_words = {
 
     # Currencies
     "dollar": "$",
-    "pound": "£",
 }
 
 # make punctuation words also included in {user.symbol_keys}
