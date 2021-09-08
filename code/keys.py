@@ -8,9 +8,9 @@ default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look ma
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
 
-default_digits = "zero one two three four five six seven eight nine".split(" ")
+default_digits = "zero win two three four five six seven eight nine".split(" ")
 numbers = [str(i) for i in range(10)]
-default_f_digits = "one two three four five six seven eight nine ten eleven twelve".split(
+default_f_digits = "win two three four five six seven eight nine ten eleven twelve".split(
     " "
 )
 
