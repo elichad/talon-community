@@ -153,6 +153,7 @@ punctuation_words = {
     "percent sign": "%",
     "percent": "%",
     "at sign": "@",
+    "attend": "@",
     "and sign": "&",
     "ampersand": "&",
 

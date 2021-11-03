@@ -2,9 +2,14 @@ from talon import app, Module, Context, actions, ui, imgui, settings, app, regis
 
 ctx = Context()
 mod = Module()
+mod.apps.generic_unix_shell = """
+os: windows
+and app.exe: putty.exe
+"""
 ctx.matches = r"""
 tag: user.generic_unix_shell
 """
+
 
 @ctx.action_class("user")
 class Actions:
@@ -12,19 +17,19 @@ class Actions:
 
     def terminal_list_directories():
         """Lists directories"""
-        actions.insert("ls")
-        actions.key("enter")
-        
+        actions.insert("ls ")
+        #actions.key("enter")
+
     def terminal_list_all_directories():
         """Lists all directories including hidden"""
-        actions.insert("ls -a")
-        actions.key("enter")
+        actions.insert("ls -a ")
+        #actions.key("enter")
 
     def terminal_change_directory(path: str):
         """Lists change directory"""
         actions.insert("cd {}".format(path))
-        if path:
-            actions.key("enter")
+        #if path:
+        #    actions.key("enter")
 
     def terminal_change_directory_root():
         """Root of current drive"""

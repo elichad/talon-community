@@ -6,3 +6,7 @@ mode: all
 dragon mode: user.dragon_mode()
 #sleep dragon on Mac, activates talon speech commands
 talon mode: user.talon_mode()
+
+dicey: key("ctrl-shift-d")
+snooze: user.engine_sleep()
+hello: user.engine_sleep()
