@@ -119,7 +119,11 @@ clear down:
     edit.delete()
 
 span:
-    edit.delete_word()
+    edit.word_left()
+    edit.extend_word_right()
+    sleep(50ms)
+    edit.delete()
+    sleep(50ms)
 
 span lease:
     edit.extend_word_left()
@@ -216,4 +220,3 @@ cut word right:
 cut line:
     edit.select_line()
     edit.cut()
-
