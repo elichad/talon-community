@@ -15,13 +15,17 @@ mod = Module()
 mod.apps.ubuntu = """
 os: windows
 and app.name: ubuntu.exe
+os: windows
+and app.name: Visual Studio Code
+os: windows
+and app.exe: Code.exe
 """
 
 ctx = Context()
 ctx.matches = r"""
 app: ubuntu
 app: windows_terminal
-and win.title: /Ubuntu/ 
+and win.title: /Ubuntu/
 """
 directories_to_remap = {}
 directories_to_exclude = {}
@@ -148,7 +152,7 @@ def run_wslpath(args, in_path):
 # and https://github.com/microsoft/WSL/issues/5318.
 #
 # Once the WSL distro is hung, every attempt to use it results in many repeated log messages like these:
-# 
+#
 # 2021-10-15 11:15:49 WARNING [watchdog] "talon.windows.ui._on_event" @30.0s (stalled)
 # 2021-10-15 11:15:49 WARNING [watchdog] "user.knausj_talon.code.file_manager.win_event_handler"
 #
@@ -156,7 +160,7 @@ def run_wslpath(args, in_path):
 # focus shifts to a wsl context or the current path changes. This gets tiresome if you don't want to restart
 # wsl immediately (because your existing sessions are still running and you want to finish working before
 # restarting wsl).
-# 
+#
 # So, wsl path detection is disabled when this condition is first detected. The user
 # must then re-enable the feature once the underlying problem has been resolved. This can be done by
 # using the 'weasel reset path detection' voice command or simply reloading this file.
@@ -219,6 +223,11 @@ def run_wsl(args):
     result = _run_cmd(command_line)
     #print(f'run_wsl(): RETURNING - result: {result}')
     return result
+
+@ctx.action_class('edit')
+class EditActions:
+    def paste(): actions.key('ctrl-shift-v')
+    def copy():  actions.key('ctrl-shift-c')
 
 @ctx.action_class('user')
 class UserActions:
@@ -303,17 +312,13 @@ class UserActions:
         actions.user.file_manager_open_directory(volume)
 
     def terminal_list_directories():
-        actions.insert("ls")
-        actions.key("enter")
+        actions.insert("ls ")
 
     def terminal_list_all_directories():
-        actions.insert("ls -a")
-        actions.key("enter")
+        actions.insert("ls -a ")
 
     def terminal_change_directory(path: str):
         actions.insert("cd {}".format(path))
-        if path:
-            actions.key("enter")
 
     def terminal_change_directory_root():
         """Root of current drive"""
