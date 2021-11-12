@@ -288,9 +288,9 @@ class Actions:
             else:
                 # print("envelop")
                 actions.key("super-s")
-                actions.sleep("300ms")
+                actions.sleep("500ms")
                 actions.insert("apps: {}".format(path))
-                actions.sleep("300ms")
+                actions.sleep("500ms")
                 actions.key("enter")
 
         else:
