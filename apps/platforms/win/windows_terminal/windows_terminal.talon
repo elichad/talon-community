@@ -17,3 +17,13 @@ kill all:
     key(ctrl-c)
     insert("y")
     key(enter)
+
+
+find it:
+    edit.find()
+
+find it <phrase>$:
+    # handle consecutive finds by first escaping out of any previous one
+    key(escape)
+    # make it so
+    edit.find("{phrase}\n")

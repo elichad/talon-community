@@ -21,10 +21,9 @@ stoke: key(win-v)
 undo: edit.undo()
 redo: edit.redo()
 spark match: edit.paste_match_style()
-save file: edit.save()
+saviour: edit.save()
 clear: key(backspace)
-(pad | padding):
+padding:
 	insert("  ")
 	key(left)
 slap: edit.line_insert_down()
-

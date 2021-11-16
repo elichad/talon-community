@@ -119,7 +119,7 @@ fulcrum comments: user.vscode("editor.foldAllBlockComments")
 # Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
 git branch: user.vscode("git.branchFrom")
 git branch this: user.vscode("git.branch")
-git checkout [<user.text>]:
+git check in [<user.text>]:
     user.vscode("git.checkout")
     sleep(50ms)
     insert(text or "")

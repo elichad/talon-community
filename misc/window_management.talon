@@ -5,6 +5,8 @@ window close: app.window_close()
 swine: key(alt-tab)
 swindle: key(ctrl-alt-tab)
 focus <user.running_applications>: user.switcher_focus(running_applications)
+# following only works on windows. Can't figure out how to make it work for mac. No idea what the equivalent for linux would be.
+focus$: user.switcher_menu()
 running list: user.switcher_toggle_running()
 launch <user.launch_applications>: user.switcher_launch(launch_applications)
 

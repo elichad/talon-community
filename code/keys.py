@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "arch bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -153,6 +153,7 @@ punctuation_words = {
     "percent sign": "%",
     "percent": "%",
     "at sign": "@",
+    "attend": "@",
     "and sign": "&",
     "ampersand": "&",
 
@@ -247,7 +248,7 @@ alternate_keys = {
     "latch": "home",
     "ratch": "end",
     "spit": "tab",
-    "arch": "space",
+    "spa": "space",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
@@ -261,10 +262,3 @@ ctx.lists["self.special_key"] = special_keys
 ctx.lists["self.function_key"] = {
     f"F {default_f_digits[i]}": f"f{i + 1}" for i in range(12)
 }
-
-
-@mod.action_class
-class Actions:
-    def get_alphabet() -> dict:
-        """Provides the alphabet dictionary"""
-        return alphabet

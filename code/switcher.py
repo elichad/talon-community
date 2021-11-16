@@ -217,6 +217,7 @@ def update_overrides(name, flags):
 
         update_running_list()
 
+
 @mod.action_class
 class Actions:
     def get_running_app(name: str) -> ui.App:
@@ -288,13 +289,20 @@ class Actions:
             else:
                 # print("envelop")
                 actions.key("super-s")
-                actions.sleep("300ms")
+                actions.sleep("500ms")
                 actions.insert("apps: {}".format(path))
-                actions.sleep("300ms")
+                actions.sleep("500ms")
                 actions.key("enter")
 
         else:
             ui.launch(path=path)
+
+    def switcher_menu():
+        """Open a menu of running apps to switch to"""
+        if app.platform == "windows":
+            actions.key("alt-ctrl-tab")
+        else:
+            print("Persistent Switcher Menu not supported on " + app.platform)
 
     def switcher_toggle_running():
         """Shows/hides all running applications"""
@@ -361,4 +369,6 @@ def on_ready():
     update_launch_list()
     update_running_list()
     ui.register("", ui_event)
+
+
 app.register("ready", on_ready)
