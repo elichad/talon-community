@@ -14,11 +14,16 @@ default_f_digits = "win two three four five six seven eight nine ten eleven twel
     " "
 )
 
+spoken_digits = "zilch alpha beta gamma delta epsilon zeta eta theta iota".split(
+    " "
+)
+
 mod = Module()
 mod.list("letter", desc="The spoken phonetic alphabet")
 mod.list("symbol_key", desc="All symbols from the keyboard")
 mod.list("arrow_key", desc="All arrow keys")
 mod.list("number_key", desc="All number keys")
+mod.list("spoken_number_key", desc="All number keys, spoken variant")
 mod.list("modifier_key", desc="All modifier keys")
 mod.list("function_key", desc="All function keys")
 mod.list("special_key", desc="All special keys")
@@ -47,6 +52,12 @@ def arrow_keys(m) -> str:
 def number_key(m) -> str:
     "One number key"
     return m.number_key
+
+
+@mod.capture(rule="{self.spoken_number_key}")
+def spoken_number_key(m) -> str:
+    "One number key"
+    return m.spoken_number_key
 
 
 @mod.capture(rule="{self.letter}")
@@ -217,6 +228,7 @@ symbol_key_words.update(punctuation_words)
 ctx.lists["self.punctuation"] = punctuation_words
 ctx.lists["self.symbol_key"] = symbol_key_words
 ctx.lists["self.number_key"] = dict(zip(default_digits, numbers))
+ctx.lists["self.spoken_number_key"] = dict(zip(spoken_digits, numbers))
 ctx.lists["self.arrow_key"] = {
     "dell": "down",
     "lease": "left",
