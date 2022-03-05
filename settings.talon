@@ -52,4 +52,4 @@ settings():
     # user.context_sensitive_dictation = 1
 
 # uncomment tag to enable mouse grid
-tag(): user.mouse_grid_enabled
+# tag(): user.mouse_grid_enabled
