@@ -5,7 +5,7 @@ mod = Module()
 ctx.matches = r"""
 tag: user.java
 """
-ctx.tags = ["user.code_operators", "user.code_generic", "user.code_functions_gui"]
+ctx.tags = ["user.code_operators", "user.code_generic"]
 
 # Primitive Types
 java_primitive_types = {
@@ -48,7 +48,6 @@ mod.list("java_common_class", desc="Java Common Classes")
 ctx.lists["self.java_common_class"] = java_common_classes
 
 
-
 # Java Generic Data Structures
 java_generic_data_structures = {
     # Interfaces
@@ -57,7 +56,6 @@ java_generic_data_structures = {
     "queue": "Queue",
     "deque": "Deque",
     "map": "Map",
-
     # Classes
     "hash set": "HashSet",
     "array list": "ArrayList",
@@ -90,14 +88,14 @@ java_modifiers = {
 mod.list("java_modifier", desc="Java Modifiers")
 ctx.lists["self.java_modifier"] = java_modifiers
 
+
 @ctx.action_class("user")
 class UserActions:
     def code_operator_lambda():
         actions.insert(" -> ")
 
     def code_operator_subscript():
-        actions.insert("[]")
-        actions.key("left")
+        actions.user.insert_between("[", "]")
 
     def code_operator_assignment():
         actions.insert(" = ")
@@ -163,10 +161,10 @@ class UserActions:
         actions.insert(" & ")
 
     def code_operator_bitwise_and_assignment():
-        actions.insert(' &= ')
+        actions.insert(" &= ")
 
     def code_operator_increment():
-        actions.insert('++')
+        actions.insert("++")
 
     def code_operator_bitwise_or():
         actions.insert(" | ")
@@ -202,49 +200,39 @@ class UserActions:
         actions.insert(" != null")
 
     def code_state_if():
-        actions.insert("if () ")
-        actions.key("left")
-        actions.key("left")
+        actions.user.insert_between("if (", ") ")
 
     def code_state_else_if():
-        actions.insert("else if () ")
-        actions.key("left")
-        actions.key("left")
+        actions.user.insert_between("else if (", ") ")
 
     def code_state_else():
         actions.insert("else ")
         actions.key("enter")
 
     def code_state_switch():
-        actions.insert("switch () ")
-        actions.key("left")
-        actions.edit.left()
+        actions.user.insert_between("switch (", ") ")
 
     def code_state_case():
         actions.insert("case \nbreak;")
         actions.edit.up()
 
     def code_state_for():
-        actions.insert("for () ")
-        actions.key("left")
-        actions.key("left")
+        actions.user.insert_between("for (", ") ")
 
     def code_state_while():
-        actions.insert("while () ")
-        actions.edit.left()
-        actions.edit.left()
+        actions.user.insert_between("while (", ") ")
 
     def code_break():
-        actions.insert('break;')
+        actions.insert("break;")
 
     def code_next():
-        actions.insert('continue;')
+        actions.insert("continue;")
 
     def code_insert_true():
-        actions.insert('true')
+        actions.insert("true")
 
     def code_insert_false():
-        actions.insert('false')
+        actions.insert("false")
 
     def code_define_class():
         actions.insert("class ")
@@ -265,7 +253,7 @@ class UserActions:
         actions.insert("return ")
 
     def code_comment_line_prefix():
-        actions.insert('// ')
+        actions.insert("// ")
 
     def code_insert_function(text: str, selection: str):
         text += f"({selection or ''})"

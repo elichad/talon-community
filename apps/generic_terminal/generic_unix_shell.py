@@ -1,4 +1,4 @@
-from talon import app, Module, Context, actions, ui, imgui, settings, app, registry
+from talon import Context, Module, actions
 
 ctx = Context()
 mod = Module()
@@ -18,18 +18,18 @@ class Actions:
     def terminal_list_directories():
         """Lists directories"""
         actions.insert("ls ")
-        #actions.key("enter")
+        # actions.key("enter")
 
     def terminal_list_all_directories():
         """Lists all directories including hidden"""
         actions.insert("ls -a ")
-        #actions.key("enter")
+        # actions.key("enter")
 
     def terminal_change_directory(path: str):
         """Lists change directory"""
-        actions.insert("cd {}".format(path))
-        #if path:
-        #    actions.key("enter")
+        actions.insert(f"cd {path}")
+        # if path:
+        #     actions.key("enter")
 
     def terminal_change_directory_root():
         """Root of current drive"""

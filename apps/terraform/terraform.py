@@ -1,4 +1,4 @@
-from talon import Module, Context
+from talon import Module
 
 mod = Module()
-mod.tag("terraform", desc="tag for enabling terraform commands in your terminal")
+mod.tag("terraform_client", desc="tag for enabling terraform commands in your terminal")
