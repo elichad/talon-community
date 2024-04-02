@@ -6,7 +6,7 @@ mod.mode("help_scope", "Mode for showing the scope help gui")
 setting_max_length = mod.setting(
     "help_scope_max_length",
     type=int,
-    default=50,
+    default=100,
 )
 
 

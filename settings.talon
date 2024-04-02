@@ -43,7 +43,7 @@ settings():
     # "command history more" to display all of them, "command history less" to restore
     user.command_history_size = 50
 
-    user.mouse_enable_hiss_drag = 1
+    user.mouse_enable_hiss_drag = 0
 
     user.mouse_enable_puh_click = 1
 
