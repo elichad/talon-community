@@ -132,6 +132,7 @@ punctuation_words = {
     "back tick": "`",
     "grave": "`",
     "comma": ",",
+    "combo": ",",
     "full stop": ".",
     "semicolon": ";",
     "colon": ":",
@@ -150,7 +151,7 @@ punctuation_words = {
     "percent sign": "%",
     "percent": "%",
     "at sign": "@",
-    "attend": "@",
+    "attic": "@",
     "and sign": "&",
     "ampersand": "&",
     # Currencies
