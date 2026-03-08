@@ -29,7 +29,7 @@ class Actions:
         """Lists change directory"""
         actions.insert(f"cd {path}")
         # if path:
-        #     actions.key("enter")
+        #    actions.key("enter")
 
     def terminal_change_directory_root():
         """Root of current drive"""

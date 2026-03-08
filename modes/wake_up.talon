@@ -17,4 +17,5 @@ mode: all
 ^snooze$: speech.disable()
 ^talon wake$: speech.enable()
 ^arise$: speech.enable()
-key(keypad_plus): speech.toggle()
+key(keypad_plus):
+    speech.toggle()

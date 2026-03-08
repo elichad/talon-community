@@ -85,6 +85,9 @@ class CodeActions:
 
 @ctx.action_class("edit")
 class EditActions:
+    def paste(): actions.key('ctrl-v')
+    def copy():  actions.key('ctrl-c')
+
     # talon edit actions
     def indent_more():
         actions.user.vscode("editor.action.indentLines")

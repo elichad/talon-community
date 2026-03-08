@@ -2,8 +2,8 @@ question [mark]: "?"
 (downscore | underscore): "_"
 dash: " – "
 double dash: "--"
-(bracket | brack | left bracket): "("
-(rbrack | are bracket | right bracket): ")"
+(bracket | left bracket): "("
+(are bracket | right bracket): ")"
 triple quote: "'''"
 (triple grave | triple back tick | gravy):
     insert("```")
@@ -68,7 +68,7 @@ hug percent:
     user.paste("%{text}%")
 hug quotes:
     text = edit.selected_text()
-    user.paste("'{text}'")
+    user.paste('"{text}"')
 (double quote | dubquote) that:
     text = edit.selected_text()
     user.paste('"{text}"')

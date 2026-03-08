@@ -25,10 +25,13 @@ directories_to_remap = {}
 directories_to_exclude = {}
 
 
-@ctx.action_class('edit')
+@ctx.action_class("edit")
 class EditActions:
-    def paste(): actions.key('shift-insert')
-    def copy():  actions.key('ctrl-insert')
+    def paste():
+        actions.key("shift-insert")
+
+    def copy():
+        actions.key("ctrl-insert")
 
 
 @ctx.action_class("user")
@@ -39,7 +42,7 @@ class UserActions:
 
     def file_manager_current_path():
         path = ui.active_window().title
-        #path = get_win_path(path)
+        # path = get_win_path(path)
 
         if path in directories_to_remap:
             path = directories_to_remap[title]
@@ -64,7 +67,7 @@ class UserActions:
 
     def file_manager_new_folder(name: str):
         """Creates a new folder in a gui filemanager or inserts the command to do so for terminals"""
-        #name = '"{}"'.format(name)
+        # name = '"{}"'.format(name)
 
         actions.insert("mkdir " + name)
 

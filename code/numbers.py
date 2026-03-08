@@ -13,6 +13,7 @@ scales = "hundred thousand million billion trillion quadrillion quintillion sext
 digits_map = {n: i for i, n in enumerate(digits)}
 digits_map["oh"] = 0
 digits_map["win"] = 1
+digits_map["toe"] = 2
 teens_map = {n: i + 10 for i, n in enumerate(teens)}
 tens_map = {n: 10 * (i + 2) for i, n in enumerate(tens)}
 scales_map = {n: 10 ** (3 * (i + 1)) for i, n in enumerate(scales[1:])}
@@ -168,6 +169,7 @@ number_word = "(" + "|".join(numbers_map.keys()) + ")"
 leading_words = numbers_map.keys() - scales_map.keys()
 leading_words -= {"oh", "o"}  # comment out to enable bare/initial "oh"
 number_word_leading = f"({'|'.join(leading_words)})"
+
 
 # TODO: allow things like "double eight" for 88
 @ctx.capture("digit_string", rule=f"({alt_digits} | {alt_teens} | {alt_tens})+")

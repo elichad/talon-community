@@ -2,7 +2,7 @@
 (http | htp): "http"
 #tls: "tls"
 #M D five: "md5"
-#word (regex | rejex): "regex"
+word (regex | rejex): "regex"
 #word queue: "queue"
 #word eye: "eye"
 #word iter: "iter"
@@ -16,15 +16,13 @@ zoom reset: edit.zoom_reset()
 scruffy: edit.page_up()
 scrawny: edit.page_down()
 stash: edit.copy()
-cut: edit.cut()
+cutter: edit.cut()
 spark: edit.paste()
 stoke: key(win-v)
 undo: edit.undo()
 redo: edit.redo()
-redolent: edit.redo()
-redo that: edit.redo()
 spark match: edit.paste_match_style()
-saviour: edit.save()
+disk | disco: edit.save()
 clear: key(backspace)
 padding:
 	insert("  ")

@@ -66,19 +66,19 @@ select left:
 select right:
     edit.extend_right()
 
-select up:
+select up | sugar:
     edit.extend_line_up()
 
-select down:
+select down | cider:
     edit.extend_line_down()
 
 select word:
     edit.select_word()
 
-queue lease:
+quack lease:
     edit.extend_word_left()
 
-queue ross:
+quack ross:
     edit.extend_word_right()
 
 select way left:
